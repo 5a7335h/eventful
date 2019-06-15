@@ -1,8 +1,9 @@
-import {Event} from './Event';
+import {Event} from '../Event/Event';
 import React from 'react';
-import {getEventsAction} from '../actions/index';
+import {getEventsAction} from '../../actions/index';
 import {connect} from 'react-redux';
 import {useEffect} from 'react';
+import './EventsList.css'
 
 const EventsList = ({events, loading, getEventsAction}) =>{
     
@@ -11,18 +12,10 @@ const EventsList = ({events, loading, getEventsAction}) =>{
     },[]);
       return<>
         {loading && <div>still loading...</div>}
-        <div style={{width:'100%'}} className={"container"}>
-            <table className={"table"}>
-                <thead>
-                    <tr>
-                        <th>Reference Number</th>
-                        <th>Event Summary</th>
-                    </tr>
-                </thead>
-                <tbody>
-                {events && events.map( event => <Event key={event.id} id={event.id} summary={event.summary} />)}
-                </tbody>
-            </table>
+        <div>
+           <ul>
+                {events && events.map( event => <Event key={event.id} id={event.id} summary={event.summary} category={event.category}  />)}
+           </ul>
         </div>
       </>;
 }
