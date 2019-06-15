@@ -9,7 +9,7 @@ export function eventsReducer(state=initialEventData, action){
     switch(action.type)
     {
         case ActionTypes.EventsReceivedAction:
-            return {...state, events: [{id: 1, name: "one"}, {id: 2, name: "two"}], loading: false};
+            return {...state, events: action.apiResult, loading: false};
         default:
             return state;
     }

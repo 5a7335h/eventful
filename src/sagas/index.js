@@ -1,4 +1,4 @@
-import { all, takeEvery, put, delay } from 'redux-saga/effects';
+import { all, takeEvery, put, delay, call } from 'redux-saga/effects';
 import * as ActionTypes from '../constants';
 
 export default function* rootSaga()
@@ -11,6 +11,7 @@ function* getEventsWatcher(){
 }
 
 function* getEvents(){
-    yield delay(5000);
-    yield put({type:ActionTypes.EventsReceivedAction});
+    let restDbResponse = yield call(fetch, "https://sat333sh-7980.restdb.io/rest/events",{headers:{'x-apikey':'5d02275727bc5b75bfeb7bb2'}});
+    let eventData = yield call([restDbResponse, restDbResponse.json]);
+    yield put({type:ActionTypes.EventsReceivedAction, apiResult: eventData});
 }

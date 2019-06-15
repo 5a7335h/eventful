@@ -8,10 +8,10 @@ const ManageEvents = ({events, loading, getEventsAction}) =>{
     
     useEffect(()=>{
         getEventsAction(); 
-    },events);
+    },[]);
       return <div>
           {loading && <div>still loading...</div>}
-          {events && events.map( event => <Event {...event} />)}
+          {events && events.map( event => <Event key={event._id} id={event.id} summary={event.summary} />)}
         </div>;
 }
 

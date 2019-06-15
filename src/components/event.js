@@ -1,5 +1,5 @@
 import React from 'react';
 
-export const Event = ({id, name}) => {
-    return <div>{`${id}    |      ${name}`}</div>;
+export const Event = ({id, summary}) => {
+    return <div>{`${id}    |      ${summary}`}</div>;
 };
