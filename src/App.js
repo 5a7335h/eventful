@@ -10,11 +10,13 @@ function App() {
   return (
     <div className={"siteContainer"}>
       <Banner/>
-      <Switch>
-        <Route path="/events" exact component={EventsList} />
-        <Route path="/" exact component={EventsList} />
-        <Route component={NotFound} />
-      </Switch>
+      <div className={"mainContent"}>
+        <Switch>
+          <Route path="/events" exact component={EventsList} />
+          <Route path="/" exact component={EventsList} />
+          <Route component={NotFound} />
+        </Switch>
+      </div>
     </div>
   );
 }
