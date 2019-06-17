@@ -27,5 +27,8 @@ img{
     transform: translateY(-50%);
     font-family: 'Courier New', Courier, monospace;
     font-size: xx-large;
-    text-shadow: 2px 2px 8px #359e34;
+    text-shadow: 2px 2px 8px #67f564;
+    color: #f0e8e8;
+    font-weight: bold;
+    
 }

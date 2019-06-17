@@ -1,0 +1,8 @@
+input {
+    width : 100%;
+}
+
+.submitButton{
+    left: 80%;
+    position: relative;
+}

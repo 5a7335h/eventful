@@ -1,4 +1,4 @@
-import * as ActionTypes from '../constants';
+import * as ActionTypes from '../Constants';
 import {combineReducers} from 'redux';
 
 const initialEventData = {
@@ -10,6 +10,8 @@ export function eventsReducer(state=initialEventData, action){
     {
         case ActionTypes.EventsReceivedAction:
             return {...state, events: action.apiResult, loading: false};
+        case ActionTypes.SaveEventSuccessAction:
+            return {...state, isSuccess: true};
         default:
             return state;
     }

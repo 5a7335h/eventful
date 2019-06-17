@@ -14,7 +14,7 @@ const EventsList = ({events, loading, getEventsAction}) =>{
         {loading && <div>still loading...</div>}
         <div>
            <ul>
-                {events && events.map( event => <Event key={event.id} id={event.id} summary={event.summary} category={event.category}  />)}
+                {events && events.map( event => <Event key={event._id} id={event.id} summary={event.summary} category={event.category}  />)}
            </ul>
         </div>
       </>;
